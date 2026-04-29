@@ -1,160 +1,187 @@
-# 情绪盲盒 - 治愈心灵的桌面应用
+# 🎁 情绪盲盒 (Emotion Box)
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Electron-29.1.0-47848F?style=flat-square&logo=electron" alt="Electron">
-  <img src="https://img.shields.io/badge/Vue-3.4.21-4FC08D?style=flat-square&logo=vuedotjs" alt="Vue">
-  <img src="https://img.shields.io/badge/Vite-5.1.6-646CFF?style=flat-square&logo=vite" alt="Vite">
-  <img src="https://img.shields.io/badge/TailwindCSS-3.4.1-06B6D4?style=flat-square&logo=tailwindcss" alt="TailwindCSS">
-</div>
+> 探索内心世界，发现治愈的力量
 
-## 📖 项目简介
+一款基于 AI 的治愈陪伴桌面应用，以"盲盒抽取"为核心交互，帮助你管理情绪、放松心情、记录生活。
 
-情绪盲盒是一款治愈系桌面应用，通过抽取盲盒的形式，为用户提供专属的治愈语录。无论你此刻是开心、焦虑、难过还是迷茫，都能在这里找到心灵的慰藉。
+[![Vue 3](https://img.shields.io/badge/Vue-3.5-4FC08D?logo=vue.js)](https://vuejs.org/)
+[![Electron](https://img.shields.io/badge/Electron-29-47848F?logo=electron)](https://www.electronjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-2.2.1-purple.svg)]()
 
-## ✨ 功能特性
+---
 
-### 🎯 核心功能
-- **情绪选择**：12种情绪类型可选，支持自定义输入
-- **盲盒抽取**：精美的开箱动画，带来仪式感
-- **治愈语录**：200+条精选治愈语录，分类管理
-- **收藏功能**：收藏喜欢的语录，随时回顾
-- **主题切换**：支持浅色/深色主题
-- **自定义语录**：添加属于自己的治愈语录
+## ✨ 功能特色
 
-### 🎨 设计亮点
-- 渐变色UI设计，美观大方
-- 流畅的动画效果，提升用户体验
-- 粒子特效，增添趣味性
-- 响应式布局，适配不同窗口大小
+| 模块 | 功能 | 说明 |
+|:---:|------|------|
+| 🎁 **情绪盲盒** | 14 种情绪分类 + 随机治愈语录 | 支持 AI 生成和本地语录库，盲盒开启动画 |
+| 📔 **心情日记** | 日记记录 + AI 情绪分析 | AI 返回情绪类型、强度评分、关键词和建议 |
+| 🌈 **治愈生成器** | 语录 / 图片 / 故事 | 三种治愈内容类型，AI 生成 + 本地兜底 |
+| 🎧 **声音盲盒** | 白噪音 / 轻音乐 / ASMR | 16 种内置声音，支持定时关闭和自定义音频 |
+| 💬 **AI 治愈对话** | 三阶段心理咨询对话 | 倾听共情 → 理解陪伴 → 支持建议 |
+| ⭐ **收藏系统** | 统一收藏管理 | 语录、图片、故事、声音一站式收藏 |
+
+## 🖥️ 应用截图
+
+<p align="center">
+  <img src="public/icon.png" width="120" alt="情绪盲盒图标">
+</p>
+
+### 首页
+
+应用首页采用 2×2 宫格布局，清晰展示四大功能入口。
+
+### 情绪盲盒
+
+选择当前情绪（14 种预设 + 自定义输入），通过盲盒动画抽取治愈语录。
+
+### 心情日记
+
+支持日期选择、心情标记、文字记录，以及 AI 智能情绪分析。
+
+### 治愈生成器
+
+三种内容类型：治愈语录、治愈图片、治愈小故事，支持收藏和换一个。
+
+### 声音盲盒
+
+内置 4 类 16 种声音，完整的音频播放器，支持定时关闭和音量控制。
 
 ## 🛠️ 技术栈
 
-| 技术 | 说明 |
-|------|------|
-| Vue 3 | 前端框架，组合式API |
-| Vite | 构建工具，快速热更新 |
-| TailwindCSS | 原子化CSS框架 |
-| Pinia | 状态管理 |
-| Electron | 桌面应用框架 |
-| canvas-confetti | 粒子特效 |
+| 技术 | 版本 | 用途 |
+|------|:---:|------|
+| Vue 3 | 3.5 | 前端框架（Composition API） |
+| Vite | 5.4 | 构建工具 |
+| Electron | 29 | 桌面应用框架 |
+| TailwindCSS | 3.4 | 原子化 CSS |
+| Pinia | 2.3 | 全局状态管理 |
+| canvas-confetti | 1.9 | 盲盒开启动画特效 |
+
+## 🤖 AI 模型支持
+
+应用统一适配 8 种国内主流 AI 模型，用户可自由切换：
+
+| 提供商 | 默认模型 |
+|--------|---------|
+| 豆包 (Doubao) | doubao-seed-2.0-pro |
+| DeepSeek | deepseek-v4-flash |
+| 通义千问 (Qwen) | qwen3.5-plus |
+| Kimi (Moonshot) | kimi-k2.5 |
+| 硅基流动 (SiliconFlow) | deepseek-ai/DeepSeek-V3 |
+| 智谱AI (GLM) | glm-5 |
+| 文心一言 (ERNIE) | ernie-4.0-8k |
+| 讯飞星火 (Spark) | 4.0Ultra |
+
+> 💡 未配置 AI 时自动降级到本地语录库（280+ 条），功能完全可用。
+
+## 🚀 快速开始
+
+### 环境要求
+
+- **Node.js** >= 18.0
+- **npm** >= 9.0
+- **操作系统**：Windows 10/11
+
+### 安装与运行
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/guyue581/emotion-box.git
+
+# 2. 进入项目目录
+cd emotion-box
+
+# 3. 安装依赖
+npm install
+
+# 4. 启动开发模式
+npm run electron:dev
+```
+
+### 构建安装包
+
+```bash
+# 构建 Windows 安装包（NSIS）
+npm run electron:build:win
+```
+
+> 💡 也可以直接双击 `启动开发.bat` 启动开发模式，或双击 `构建安装包.bat` 构建安装包。
 
 ## 📁 项目结构
 
 ```
 emotion-box/
 ├── electron/
-│   ├── main.js          # Electron主进程
-│   └── preload.js       # 预加载脚本
+│   ├── main.js              # Electron 主进程
+│   └── preload.js           # 安全桥接脚本
+├── public/
+│   ├── audio/               # 本地音频文件（16个）
+│   ├── icon.ico             # 应用图标
+│   └── icon.png             # 应用图标
 ├── src/
-│   ├── main.js          # Vue入口
-│   ├── App.vue          # 根组件
-│   ├── style.css        # 全局样式
-│   ├── components/
-│   │   ├── Home.vue     # 首页 - 情绪选择
-│   │   ├── BoxOpen.vue  # 盲盒抽取页面
-│   │   ├── Result.vue   # 结果展示页面
-│   │   ├── Collection.vue # 收藏页面
-│   │   └── Settings.vue # 设置页面
 │   ├── assets/
-│   │   └── quotes.js    # 语录库
-│   └── stores/
-│       └── app.js       # Pinia状态管理
+│   │   └── quotes.js        # 本地语录库（14类，280+条）
+│   ├── components/
+│   │   ├── Home.vue         # 首页
+│   │   ├── BoxOpen.vue      # 盲盒开启
+│   │   ├── Result.vue       # 结果展示
+│   │   ├── MoodDiary.vue    # 心情日记
+│   │   ├── HealingGenerator.vue  # 治愈生成器
+│   │   ├── VoiceBox.vue     # 声音盲盒
+│   │   ├── Collection.vue   # 收藏管理
+│   │   ├── AIChat.vue       # AI 对话
+│   │   └── Settings.vue     # 设置页面
+│   ├── services/
+│   │   ├── apiService.js    # AI 多模型适配服务
+│   │   └── safetyService.js # 安全检测服务
+│   ├── stores/
+│   │   └── app.js           # Pinia 全局状态
+│   ├── App.vue              # 根组件
+│   ├── main.js              # 入口文件
+│   └── style.css            # 全局样式
+├── index.html
 ├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
-└── README.md
+├── 启动开发.bat
+└── 构建安装包.bat
 ```
 
-## 🚀 快速开始
+## 🛡️ 安全机制
 
-### 环境要求
-- Node.js >= 16.0.0
-- npm 或 yarn
+作为心理健康类应用，内置三级安全检测体系：
 
-### 安装依赖
+| 级别 | 检测内容 | 响应方式 |
+|:---:|------|------|
+| 🔴 危机 | 自杀、自残相关 | 立即显示心理援助热线 |
+| 🟠 严重 | 严重绝望情绪 | 显示关怀信息和热线 |
+| 🟡 警告 | 冲动决策、破坏性行为 | 温和提醒和建议 |
 
-```bash
-cd emotion-box
-npm install
-```
+- AI 回复经过多层安全过滤（危险建议检测 + 禁止短语替换）
+- Electron 安全配置：`nodeIntegration: false` + `contextIsolation: true`
+- 所有数据本地存储，API 配置不上传
 
-### 开发模式
+## 📋 使用场景
 
-```bash
-# 启动Vite开发服务器 + Electron
-npm run electron:dev
-```
+| 场景 | 推荐功能 |
+|------|---------|
+| 工作压力大 | 声音盲盒 + 情绪盲盒 |
+| 情绪低落 | 情绪盲盒 + AI 对话 |
+| 睡前放松 | 声音盲盒（自然声音 + 定时关闭） |
+| 情绪记录 | 心情日记 + AI 分析 |
+| 需要灵感 | 治愈生成器 |
+| 日常陪伴 | 每天抽取一句治愈语录 |
 
-### 构建打包
+## 📄 开源协议
 
-```bash
-# 构建Windows可执行文件
-npm run electron:build:win
-```
-
-打包后的文件位于 `dist-electron/` 目录。
-
-## 📦 打包说明
-
-### Windows安装包
-- 使用 electron-builder 进行打包
-- 支持 NSIS 安装向导
-- 自动创建桌面快捷方式和开始菜单
-
-### 注意事项
-- 打包后体积约 100-150MB
-- 首次运行可能需要管理员权限
-- 数据存储在用户目录 `%APPDATA%/emotion-box/`
-
-## 💾 数据存储
-
-应用数据存储位置：
-- **Windows**: `%APPDATA%/emotion-box/`
-- **macOS**: `~/Library/Application Support/emotion-box/`
-- **Linux**: `~/.config/emotion-box/`
-
-存储内容：
-- `collections.json` - 收藏的语录
-- `settings.json` - 用户设置
-- `customQuotes.json` - 自定义语录
-
-## 🎨 情绪分类
-
-| 情绪 | Emoji | 描述 |
-|------|-------|------|
-| 开心 | 😊 | 快乐、愉悦的心情 |
-| 焦虑 | 😔 | 紧张、不安的情绪 |
-| 难过 | 😢 | 悲伤、失落的心情 |
-| 孤独 | 😔 | 寂寞、渴望陪伴 |
-| 迷茫 | 😵 | 困惑、不知所措 |
-| 愤怒 | 😤 | 生气、不满的情绪 |
-| 充满希望 | 💪 | 积极、向上的心态 |
-| 需要安慰 | 🥺 | 脆弱、需要关爱 |
-| 平静 | 😌 | 宁静、平和的心态 |
-| 感恩 | 🙏 | 感激、珍惜的心情 |
-| 疲惫 | 😴 | 劳累、需要休息 |
-| 自卑 | 😔 | 不自信、需要鼓励 |
-
-## 🔧 高级配置
-
-### 自定义AI接口
-
-在设置页面可以配置AI API Key，实现更智能的情绪分析功能。
-
-### 自定义语录
-
-用户可以添加自己喜欢的语录，这些语录会随机出现在盲盒中。
-
-## 📄 许可证
-
-MIT License
-
-## 🙏 致谢
-
-- 感谢所有提供治愈语录的创作者
-- 使用了优秀的开源项目：Vue、Vite、TailwindCSS、Electron
+本项目基于 [MIT License](LICENSE) 开源。
 
 ---
 
-**💝 愿每一份温暖都能被看见**
+<p align="center">
+  用 ❤️ 和 <a href="https://solo.ai">SOLO AI</a> 构建
+</p>
