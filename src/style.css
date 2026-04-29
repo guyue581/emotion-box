@@ -1,0 +1,587 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-500;
+  }
+  
+  .theme-light {
+    @apply bg-theme-light-bg text-theme-light-text;
+  }
+  
+  .theme-dark {
+    @apply bg-theme-dark-bg text-theme-dark-text;
+  }
+  
+  .theme-forest {
+    @apply bg-theme-forest-bg text-theme-forest-text;
+  }
+  
+  .theme-ocean {
+    @apply bg-theme-ocean-bg text-theme-ocean-text;
+  }
+  
+  .theme-starry {
+    @apply bg-theme-starry-bg text-theme-starry-text;
+  }
+  
+  .theme-sunset {
+    @apply bg-theme-sunset-bg text-theme-sunset-text;
+  }
+  
+  .theme-custom {
+    @apply bg-theme-custom-bg text-theme-custom-text;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-500 
+           text-white font-medium rounded-xl
+           shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105
+           transition-all duration-500 active:scale-95 relative overflow-hidden
+           animate-gradient-flow hover:animate-pulse-scale border border-white/20;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-white/10 opacity-0 hover:opacity-100
+           transition-opacity duration-300;
+  }
+  
+  .btn-primary:active::after {
+    content: '';
+    @apply absolute inset-0 bg-white/20 rounded-xl
+           animate-ripple;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white dark:bg-dark-card text-gray-700 dark:text-gray-300
+           font-medium rounded-xl shadow-md hover:shadow-lg
+           transition-all duration-500 transform hover:-translate-y-1 active:scale-95
+           border border-gray-200 dark:border-gray-700;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-gray-50 dark:bg-gray-800 border-gray-300;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6 
+           relative overflow-hidden transition-all duration-500
+           hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] backdrop-blur-sm
+           border border-gray-100 dark:border-gray-800;
+  }
+  
+  .theme-dark .card {
+    @apply bg-dark-card shadow-card-dark border-gray-700;
+  }
+  
+  .theme-starry .card {
+    @apply bg-starry-card shadow-card-dark border-gray-700;
+  }
+  
+  .card::before {
+    content: '';
+    @apply absolute -top-40 -right-40 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl transition-transform duration-700;
+  }
+  
+  .card::after {
+    content: '';
+    @apply absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-500/10 rounded-full blur-3xl transition-transform duration-700;
+  }
+  
+  .card:hover::before {
+    @apply scale-110;
+  }
+  
+  .card:hover::after {
+    @apply scale-110;
+  }
+  
+  .card::before {
+    content: '';
+    @apply absolute -top-40 -right-40 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl transition-transform duration-700;
+  }
+  
+  .card::after {
+    content: '';
+    @apply absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-500/10 rounded-full blur-3xl transition-transform duration-700;
+  }
+  
+  .card:hover::before {
+    @apply scale-110;
+  }
+  
+  .card:hover::after {
+    @apply scale-110;
+  }
+  
+  .theme-ocean .card::before {
+    @apply bg-blue-500/10;
+  }
+  
+  .theme-ocean .card::after {
+    @apply bg-cyan-500/10;
+  }
+  
+  .theme-starry .card::before {
+    @apply bg-purple-500/10;
+  }
+  
+  .theme-starry .card::after {
+    @apply bg-indigo-500/10;
+  }
+  
+  .theme-sunset .card::before {
+    @apply bg-orange-500/10;
+  }
+  
+  .theme-sunset .card::after {
+    @apply bg-amber-500/10;
+  }
+  
+  .theme-custom .card::before {
+    background-color: rgba(var(--custom-primary-rgb, 102, 126, 234), 0.1);
+  }
+  
+  .theme-custom .card::after {
+    background-color: rgba(var(--custom-secondary-rgb, 118, 75, 162), 0.1);
+  }
+  
+  .emotion-btn {
+    @apply px-4 py-3 rounded-xl bg-white/80 backdrop-blur-sm
+           shadow-sm hover:shadow-md hover:-translate-y-1
+           transition-all duration-300 cursor-pointer relative overflow-hidden
+           hover:scale-105 active:scale-95;
+  }
+  
+  .theme-dark .emotion-btn {
+    @apply bg-dark-card/80 border-dark-card/30;
+  }
+  
+  .theme-starry .emotion-btn {
+    @apply bg-starry-card/80 border-starry-card/30;
+  }
+  
+  .emotion-btn:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+  .emotion-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary-500/10 to-secondary-500/10
+           opacity-0 transition-all duration-500;
+  }
+  
+  .emotion-btn:active::after {
+    content: '';
+    @apply absolute inset-0 bg-white/20 rounded-xl
+           animate-ripple;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200
+           bg-white 
+           focus:border-primary-500 focus:ring-2 focus:ring-primary-200
+           outline-none transition-all duration-300;
+  }
+  
+  .theme-dark .input-field {
+    @apply bg-dark-card border-gray-700;
+  }
+  
+  .theme-starry .input-field {
+    @apply bg-starry-card border-gray-700;
+  }
+  
+  .box-container {
+    @apply relative w-48 h-48 mx-auto cursor-pointer;
+  }
+  
+  .box-inner {
+    @apply absolute inset-0 bg-gradient-to-br from-primary-600 to-secondary-500 rounded-3xl 
+           shadow-2xl flex items-center justify-center relative overflow-hidden;
+  }
+  
+  .box-bow {
+    @apply absolute -top-2 left-1/2 -translate-x-1/2;
+  }
+  
+  .box-bow::before {
+    content: '';
+    @apply w-12 h-8 bg-yellow-300 rounded-full relative block;
+  }
+  
+  .box-bow::after {
+    content: '';
+    @apply absolute top-1 left-1/2 -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full;
+  }
+  
+  .quote-card {
+    @apply relative z-10 bg-white/95 rounded-2xl p-6 shadow-lg
+           backdrop-blur-sm border border-white/20;
+  }
+  
+  .theme-dark .quote-card {
+    @apply bg-dark-card/95 border-dark-card/30;
+  }
+  
+  .theme-starry .quote-card {
+    @apply bg-starry-card/95 border-starry-card/30;
+  }
+  
+  .emotion-tag {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-primary-50 
+           rounded-full text-primary-600 text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+  
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .transform-gpu {
+    transform: translateZ(0);
+  }
+}
+
+/* 自定义动画 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce-light {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-y {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes pulse-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-light {
+    animation: bounce-light 2s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 0.6s ease-out forwards;
+  }
+
+  .animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 3s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-rotate-y {
+    animation: rotate-y 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-scale {
+    animation: pulse-scale 2s ease-in-out infinite;
+  }
+
+  .animate-ripple {
+    animation: ripple 0.6s ease-out forwards;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400;
+}
+
+/* 深色模式滚动条 */
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-primary-700;
+}
+
+/* 设置页面自定义滚动条 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #5a67d8, #6b46c1);
+}
+
+/* AI特效光晕 */
+.ai-glow {
+  @apply ring-2 ring-purple-500/50 ring-offset-2 ring-offset-transparent;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.3), 0 0 80px rgba(168, 85, 247, 0.1);
+}
+
+/* 背景容器 */
+.bg-image {
+  transition: all 0.5s ease;
+}
+
+/* 流动背景动画 */
+.animate-gradient-flow {
+  background-size: 400% 400%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+/* 加载动画 */
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin;
+}
+
+/* 粒子效果容器 */
+.confetti-container {
+  @apply absolute inset-0 w-full h-full pointer-events-none overflow-hidden;
+}
+
+/* 自定义滚动条 - 美化设置 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #667eea transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a67d8, #6b46c1);
+}
+
+/* AI特效光晕 */
+.ai-glow {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* 背景容器 */
+.bg-image {
+  transition: all 0.5s ease;
+}
+
+/* 流动背景动画 */
+.animate-gradient-flow {
+  background-size: 400% 400%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+/* 响应式调整 */
+@media (max-width: 480px) {
+  .box-container {
+    @apply w-40 h-40;
+  }
+}
+
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* 页面切换动画 - 修复空白问题 */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.25s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(-15px);
+}

@@ -1,0 +1,17 @@
+<svg width="100%" height="100%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f7fa"/>
+      <stop offset="100%" stop-color="#eef1ff"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg-gradient)"/>
+  <circle cx="200" cy="200" r="150" fill="#667eea" opacity="0.05" filter="url(#blur)"/>
+  <circle cx="800" cy="300" r="100" fill="#764ba2" opacity="0.05" filter="url(#blur)"/>
+  <circle cx="500" cy="800" r="120" fill="#f093fb" opacity="0.05" filter="url(#blur)"/>
+  <circle cx="100" cy="700" r="80" fill="#4facfe" opacity="0.05" filter="url(#blur)"/>
+  <circle cx="900" cy="900" r="90" fill="#00f2fe" opacity="0.05" filter="url(#blur)"/>
+</svg>

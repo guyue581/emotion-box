@@ -1,0 +1,67 @@
+{
+  "name": "emotion-box",
+  "version": "2.2.1",
+  "description": "情绪盲盒 - AI治愈陪伴桌面应用",
+  "main": "electron/main.js",
+  "author": "Emotion Box Team",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:build": "vite build && electron-builder",
+    "electron:build:win": "vite build && electron-builder --win"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^8.2.2",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.19",
+    "vite": "^5.4.21",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.emotionbox.pro",
+    "productName": "情绪盲盒",
+    "directories": {
+      "output": "C:/Users/Administrator/AppData/Local/Temp/emotion-box-build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "public/**/*"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "dist/audio/**/*"
+    ],
+    "icon": "public/icon.ico",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "情绪盲盒",
+      "language": "2052",
+      "perMachine": true,
+      "deleteAppDataOnUninstall": true,
+      "artifactName": "情绪盲盒_Setup.${ext}",
+      "uninstallDisplayName": "情绪盲盒"
+    }
+  }
+}
